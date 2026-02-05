@@ -1,0 +1,24 @@
+package stepDefinations;
+
+import java.time.Duration;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.BeforeAll;
+
+public class Fixtures extends Base {
+
+    @BeforeAll
+    public static void setup() {
+        driver = new FirefoxDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+    }
+
+    @AfterAll
+    public static void teardown() {
+        driver.quit();
+    }
+
+}
